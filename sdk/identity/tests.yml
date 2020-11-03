@@ -17,6 +17,12 @@ extends:
         Container: 'ubuntu_netcore_keyring'
         SupportedClouds: 'Public,Canary,Preview'
     ServiceDirectory: identity
+    ArmTemplateParameters:
+      EnableHsm:
+        Value: true
+        Platform: Linux_NetCore_Keyring
+      TestGlobalParam:
+        Value: global foo
     PreSteps:
       - pwsh: Install-Module -Name Az -Scope CurrentUser -AllowClobber -Force -Verbose
         displayName: Install Azure PowerShell module
